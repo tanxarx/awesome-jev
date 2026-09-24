@@ -112,6 +112,7 @@ Every link below was resolved from its original source tweet/thread and verified
 - [Dicklesworthstone/skillranker](https://github.com/Dicklesworthstone/skillranker) - A Rust CLI that uses Jev to rank which agent skill to load next from live session context, with Claude Code hooks and an abstain option.
 - [Kevthetech143/super-jev](https://github.com/Kevthetech143/super-jev) - A small, extensible decision-to-action harness built on Jev.
 - [libingzheren/Jev-Mem](https://github.com/libingzheren/Jev-Mem) - Research code for "System-One-Controlled Agentic Memory": using Jev-style typed decisions to gate what an agent writes to and retrieves from memory.
+- [supercorp-ai/supercov](https://github.com/supercorp-ai/supercov) - Coverage, security and code quality for coding agents: Jev checks each source file so the agent knows what to fix first.
 
 ## SDKs, Frameworks & Platform Integrations
 
