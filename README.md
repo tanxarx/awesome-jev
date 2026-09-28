@@ -63,6 +63,8 @@ Every link below was resolved from its original source tweet/thread and verified
 - [Contrastive-LM/CLM](https://github.com/Contrastive-LM/CLM) - Contrastive Language Models: a System One model that embeds states and actions separately and matches them by similarity instead of answering typed questions, reporting on-par accuracy with Jev at up to 9x lower latency.
 - [togethercomputer/tev1](https://github.com/togethercomputer/tev1) - Together AI's open-weight reproduction: Qwen3.5-4B fine-tuned via LoRA on ~38K examples to pick one answer letter from 2-24 options, released with the full data recipe and a $17 training-cost writeup.
 - [fastino/GLiNER2.5-Decide](https://huggingface.co/fastino/GLiNER2.5-Decide) - Fastino Labs' 340M-parameter Apache-2.0 encoder decision model; scored 60.1% on their own Fast Decisions benchmark, ahead of Laya (46.6%) and a Jev-based baseline (57.5%).
+- [SupersonicLabs/Julia-1](https://huggingface.co/SupersonicLabs/Julia-1) - A 144M-parameter Apache-2.0 decision model on mmBERT-small; runs on CPU, scores 73.15% on Jev's own Typed Decisions benchmark, with a WebGPU ONNX build for in-browser inference.
+- [ollaya-dev/ollaya](https://github.com/ollaya-dev/ollaya) - "Ollama for decision models": pulls and serves Laya, Decider, NLI, and GLiClass locally behind a TypeSafe-compatible API.
 
 ## Coding Agents & Dev Tools
 
@@ -119,6 +121,12 @@ Every link below was resolved from its original source tweet/thread and verified
 - [libingzheren/Jev-Mem](https://github.com/libingzheren/Jev-Mem) - Research code for "System-One-Controlled Agentic Memory": using Jev-style typed decisions to gate what an agent writes to and retrieves from memory.
 - [Avinash-jetwani/jevmem](https://github.com/Avinash-jetwani/jevmem) - Automatic project memory for Claude Code, Cursor, and Codex: Jev decides which decisions, constraints, bugs, and todos from a session are worth writing to `JEVMEM.md`.
 - [monteduro/killmyidea](https://github.com/monteduro/killmyidea) - Describe a startup idea and Jev answers 10 typed questions in parallel (8 scored criteria plus category and clarity) to return a kill/fix/ship verdict.
+- [muthuishere/jevx](https://github.com/muthuishere/jevx) - An agent-skill CLI for Claude Code/Codex/any agent giving yes/no/unsure and pick-one/rating answers from a Jev-style model, with exit-code contracts and hook-based guardrails.
+- [shaharia-lab/jev-cli](https://github.com/shaharia-lab/jev-cli) - A command-line tool for Jev: ask yes/no, multiple-choice, and rubric questions about text and get calibrated probabilities as shell exit codes, JSON, or MCP tools.
+- [caiovicentino/jev-shield](https://github.com/caiovicentino/jev-shield) - A semantic MCP firewall powered by Jev that screens every tool call, result, and description with calibrated System One verification.
+- [egma-ai/jev-code-reviewer](https://github.com/egma-ai/jev-code-reviewer) - Reviews agent-generated PR behavior rather than just diffs, using Jev to prioritize what needs human attention.
+- [abhixhek/jevcal](https://github.com/abhixhek/jevcal) - Calibrates, thresholds, and drift-checks typed decision models like Jev against an LLM teacher.
+- [ThinkFlowLab/system1-agents](https://github.com/ThinkFlowLab/system1-agents) - Uses System 1 decision models (Jev, Laya, Cua-S1) as the fast-decision "brain" for browser-use, computer-use, game, and robotics agents.
 
 ## SDKs, Frameworks & Platform Integrations
 
@@ -131,6 +139,7 @@ Every link below was resolved from its original source tweet/thread and verified
 - [dannote/jev](https://github.com/dannote/jev) - An Elixir/OTP client: reply to Jev from a GenServer and pattern-match on its typed answer.
 - [gilljon/typesafe-ai-rs](https://github.com/gilljon/typesafe-ai-rs) - An independent async/blocking Rust SDK for the TypeSafe System One API.
 - [pydantic/pydantic-ai](https://github.com/pydantic/pydantic-ai/blob/main/docs/models/typesafe.md) - Pydantic AI's built-in TypeSafe/Jev model provider, usable as a structured-output model or as an LLM-judge evaluator.
+- [marcreichel/laya-php](https://github.com/marcreichel/laya-php) - A Laravel-ready PHP SDK for Laya (a Jev alternative), classifying text in 100+ languages self-hosted.
 
 ## Browser & Desktop Automation
 
@@ -146,6 +155,7 @@ Every link below was resolved from its original source tweet/thread and verified
 - [nomanjack/smart-paste](https://github.com/nomanjack/smart-paste) - A Chrome extension that uses Jev choice/score/noul questions to match pasted text to form fields and paste only confident matches.
 - [lahfir/agent-desktop](https://github.com/lahfir/agent-desktop) - Rust-based desktop automation that reads an app's real UI through OS accessibility trees instead of screenshots, with an optional Jev skill for selecting controls and actions without loading the whole UI tree into context.
 - [shhivv/arc-cua](https://github.com/shhivv/arc-cua) - A desktop-automation action layer where Jev picks the next UI operation and target from a dynamically built action space limited to what the current screen actually exposes.
+- [michaelswissa/jevry](https://github.com/michaelswissa/jevry) - An MIT-licensed desktop browser agent for website tasks, cited research, and supported games.
 
 ## Data & Retrieval
 
@@ -177,6 +187,8 @@ Every link below was resolved from its original source tweet/thread and verified
 - [gaborishka/jev-wrapped](https://github.com/gaborishka/jev-wrapped) - Judges a Telegram channel's year of posts with Jev and renders a "wrapped" summary card.
 - [stas4000/jev-scroll](https://github.com/stas4000/jev-scroll) - A Chrome extension that labels every X/Twitter post with a Jev decision while scrolling.
 - [achimala/jev-paint](https://github.com/achimala/jev-paint) - Turns Jev into a parallel pixel-color predictor: brush width tracks Jev's per-pixel confidence.
+- [tomita-anri/jev-ad-blocker](https://github.com/tomita-anri/jev-ad-blocker) - A Chrome extension that uses Jev to identify and remove only ads from a page.
+- [fazlerocks/jevmail](https://github.com/fazlerocks/jevmail) - Open-source, read-only Gmail triage that sorts an inbox into Needs Reply/Updates/Promos/Sales/Spam with Jev, ~1,000 emails/minute for 3 cents.
 
 ## Simulation, Games & Hardware
 
@@ -210,6 +222,8 @@ Every link below was resolved from its original source tweet/thread and verified
 - [zilliztech/memsearch](https://github.com/zilliztech/memsearch/blob/main/evaluation/reranking-evaluation.md) - Jev-based memory reranking raised Recall@5 from 74.71% to 79.41% over the baseline, though it still trailed Voyage rerank-3's 81.87%.
 - [zilliztech/vector-graph-rag](https://github.com/zilliztech/vector-graph-rag/blob/main/evaluation/jev/README.md) - Jev filters graph relationships for HotpotQA/MuSiQue multi-hop QA, beating GPT-4o-mini but trailing GPT-5-mini on relationship-selection accuracy.
 - [crzyc0d3r/jev-agent-judge](https://github.com/crzyc0d3r/jev-agent-judge) - Evaluates recorded support-agent traces with typed Jev judgments (grounded, honest, relevant, helpful) and logs each as an Opik experiment, routing mid-confidence scores to human review.
+- [sumleo/RLCDAlignBench](https://github.com/sumleo/RLCDAlignBench) - "Just Ask Jev": 44 alignment-failure-detection benchmarks for RLCD-style zero-shot detectors like Jev, matching GPT-4o-mini on StrongREJECT at a fraction of the cost.
+- [jesyspa/jev-lean](https://github.com/jesyspa/jev-lean) - A Lean proof-automation harness that uses Jev to select lemmas and tactics.
 
 ## Articles, Threads & Playbooks
 
