@@ -229,6 +229,7 @@ Every link below was resolved from its original source tweet/thread and verified
 
 Not every valuable Jev post ships a repo. These threads carry the architectural ideas driving the ecosystem above:
 
+- [Jev in the Wild](https://arxiv.org/abs/2609.30216) - Data-driven survey of 2,170 public GitHub Jev projects, analyzing early growth, application domains, and decision-use patterns.
 - [Ronin — the "100x Upgrade" playbook](https://x.com/DeRonin_/status/2100917158922387537) - You don't get the 100x by swapping your LLM for Jev; you get it by finding the calls that never needed a language model in the first place and deleting them.
 - [Milon — "Jev is not a smaller LLM"](https://x.com/milonspace/status/2101495990725566640) - Restricts Jev to exactly three gating jobs: is this done, which tool next, does a human need to see it — everything else still goes to a model that can write.
 - [lifcc — System 1 / System 2 agent bifurcation](https://x.com/mylifcc/status/2101504368746848492) - Argues production agents need a strict split: Jev handles millisecond-level routing, the heavy LLM stays dormant until deep reasoning is actually required.
