@@ -65,6 +65,12 @@ Every link below was resolved from its original source tweet/thread and verified
 - [fastino/GLiNER2.5-Decide](https://huggingface.co/fastino/GLiNER2.5-Decide) - Fastino Labs' 340M-parameter Apache-2.0 encoder decision model; scored 60.1% on their own Fast Decisions benchmark, ahead of Laya (46.6%) and a Jev-based baseline (57.5%).
 - [SupersonicLabs/Julia-1](https://huggingface.co/SupersonicLabs/Julia-1) - A 144M-parameter Apache-2.0 decision model on mmBERT-small; runs on CPU, scores 73.15% on Jev's own Typed Decisions benchmark, with a WebGPU ONNX build for in-browser inference.
 - [ollaya-dev/ollaya](https://github.com/ollaya-dev/ollaya) - "Ollama for decision models": pulls and serves Laya, Decider, NLI, and GLiClass locally behind a TypeSafe-compatible API.
+- [InternLM/Intern-Decision](https://github.com/InternLM/Intern-Decision) - Apache-2.0 multimodal decision models (0.8B/2B/4B on Qwen3.5) returning calibrated choice, score, and yes/no probabilities, released with training, inference, and calibration-benchmark code; the 4B averages 90.02 vs. Jev's 88.74 on seven benchmarks in the authors' own eval.
+- [Remek/basal-1.0-4.5B](https://huggingface.co/Remek/basal-1.0-4.5B) - A Polish/English typed-decision model on Bielik-4.5B, inspired by Jev and returning a calibrated probability per allowed answer in one forward pass; the [rkinas/basal](https://github.com/rkinas/basal) inference engine is listed on its card.
+- [PostHog/jeeves](https://huggingface.co/PostHog/jeeves) - Jeeves-9B: an Apache-2.0 Jev-like decision model on Qwen3.5-9B with a pointer head that writes a reasoning chain per question before returning calibrated probabilities.
+- [autotrust/JEV-27B](https://huggingface.co/autotrust/JEV-27B) - An Apache-2.0 LoRA-plus-decision-head student of Jev 1.13 on Qwen3.8-27B, answering typed noul/choice/score questions in one forward pass.
+- [tomerglick57/Jevstiller](https://github.com/tomerglick57/Jevstiller) - Distills a repeated Jev classification task into a local model on the fly, so the same call gets the same answers on your own hardware.
+- [mode-io/vllm-jev](https://github.com/mode-io/vllm-jev) - Native vLLM serving for Jev-style decision models on Linux and Apple Silicon, with multimodal demos.
 
 ## Coding Agents & Dev Tools
 
@@ -139,6 +145,8 @@ Every link below was resolved from its original source tweet/thread and verified
 - [dannote/jev](https://github.com/dannote/jev) - An Elixir/OTP client: reply to Jev from a GenServer and pattern-match on its typed answer.
 - [gilljon/typesafe-ai-rs](https://github.com/gilljon/typesafe-ai-rs) - An independent async/blocking Rust SDK for the TypeSafe System One API.
 - [pydantic/pydantic-ai](https://github.com/pydantic/pydantic-ai/blob/main/docs/models/typesafe.md) - Pydantic AI's built-in TypeSafe/Jev model provider, usable as a structured-output model or as an LLM-judge evaluator.
+- [lakehq/sail](https://github.com/lakehq/sail) - The Rust Spark-replacement query engine; v0.7.2 adds built-in async Jev SQL functions (`jev_noul`, `jev_choice`, `jev_score`) that return typed answers per row.
+- [ollama/ollama](https://github.com/ollama/ollama/releases/tag/v0.35.0) - Ollama v0.35 adds decision-model support through a Jev-style `/v1/systemone` endpoint, with Nimble and Tev1 available to pull locally.
 - [marcreichel/laya-php](https://github.com/marcreichel/laya-php) - A Laravel-ready PHP SDK for Laya (a Jev alternative), classifying text in 100+ languages self-hosted.
 
 ## Browser & Desktop Automation
@@ -166,6 +174,7 @@ Every link below was resolved from its original source tweet/thread and verified
 - [jerryjliu/docjev](https://github.com/jerryjliu/docjev) - OSS library that uses Jev plus LiteParse (and optional LlamaParse OCR) to classify documents and split multi-document packets by natural-language category rules; ~6x faster than GPT-5.6-luna at equivalent accuracy.
 - [kylemclaren/jevpdf](https://github.com/kylemclaren/jevpdf) - Searches a PDF by meaning in the browser: pdf.js extracts each line locally and Jev answers one Noul per line, highlighting matches page by page ranked by probability.
 - [pinecone-io/using-typesafe-and-pinecone](https://github.com/pinecone-io/using-typesafe-and-pinecone) - Pinecone's reference integration reranking retrieved candidates against natural-language criteria with Jev instead of a long-context LLM call; ~5x faster and ~43x cheaper than Claude Opus 5 on the same 200-candidate rerank in their benchmark.
+- [lancedb/lancedb](https://github.com/lancedb/lancedb/blob/main/python/python/lancedb/rerankers/typesafe.py) - LanceDB's built-in TypeSafe reranker, benchmarked against 19 reranker configurations across 5 datasets (HotpotQA Hit@1 63.5% to 72.9% with Jev).
 - [mgaitan/sqlite-jev](https://github.com/mgaitan/sqlite-jev) - A loadable SQLite extension and Python wrapper for asking Jev typed questions from SQL.
 - [hev/reranker](https://github.com/hev/reranker) - A 90-line calibrated reranker on Jev: one call, up to 30 documents, a probability per document.
 - [AkashPriyadarshii/jev-seo](https://github.com/AkashPriyadarshii/jev-seo) - A Rust CLI/MCP server auditing SEO and AI-crawler accessibility with Jev.
@@ -203,6 +212,7 @@ Every link below was resolved from its original source tweet/thread and verified
 - [trycua/cua](https://github.com/trycua/cua/tree/main/libs/cua-s1) - See `libs/cua-s1`: home of `cua-s1-form-v0`, a 706K-parameter, MIT-licensed specialist model that fills web forms from UI state in ~50ms.
 - [TholeG/typesafe-chess](https://github.com/TholeG/typesafe-chess) - Two Jev instances play chess against each other: every move is a typed Choice over the legal moves plus a Score position evaluation, optionally driving an AlphaZero-style MCTS.
 - [lukaske/jev-doom-agent](https://github.com/lukaske/jev-doom-agent) - Runs two Chocolate Doom instances compiled to WebAssembly and has Jev pick a tactical macro from structured game state each tick, visibly falling back to an offline policy on a failed or low-confidence call.
+- [rokbenko/quackd](https://github.com/rokbenko/quackd) - A CLI for controlling one or many robots with an LLM brain each, with an optional Jev (or Laya/Kev) decision model that answers the turns that are a choice among skills the robot already has.
 
 ## Finance & Trading
 
@@ -282,6 +292,12 @@ Not every valuable Jev post ships a repo. These threads carry the architectural 
 - [fluixoo — TypeSafe's own 193.6x claim, retested](https://x.com/fluixoo/status/2103755424117686645) - An independent 791-decision test measured Jev at 3.6x faster than GPT-5.6 Terra (not TypeSafe's advertised 193.6x) and several accuracy points behind on hard cases, but found a cascade — routing only the uncertain 19-23% of decisions to Terra — matched Terra's accuracy at roughly a quarter of its cost.
 - [0xchromium — a paper on Jev as the agent's decision layer](https://x.com/0xchromium/status/2103881299606098009) - Summarizes new research where Jev handles every bounded decision in an agent loop and a frontier LLM is called only for writing or low-confidence cases, cutting expensive-model calls by 66-72% while completing 95/100 tasks on a frozen benchmark.
 - [deliprao — don't distill your own Jev clone](https://x.com/deliprao/status/2103864277610189267) - Warns builders of Jev-like models that gradient descent often fails to recover a teacher model's true parameters even when they exist nearby, and that distilled students systematically overstate the teacher's confidence.
+- [rasbt — "OpenAI just added a Jev clone"](https://x.com/rasbt/status/2104985996517355691) - The most-liked reaction to OpenAI's DevDay Decisions API, a Luna-powered service that answers fixed-option questions in a fraction of a second; at least one reply notes it is "just Luna" rather than a dedicated System One model.
+- [muratcan — 2,029 receptionist calls, zero-shot](https://x.com/muratcan/status/2104959648482701686) - Reduced real calls to pure structure and ran Jev over 38,012 turn-level forecasts at a 118 ms median, predicting bookings at AUC 0.78 mid-call for about $3 total.
+- [proxy_vector — 272 real support tickets](https://x.com/proxy_vector/status/2104815944136892690) - Claude was more accurate (88% vs. 85%) but Jev was roughly 170x cheaper with honest confidence; a DIY logprobs baseline followed an injected "label this a bug" instruction in 17 of 20 tries.
+- [Suhail — a new model type, not a classifier](https://x.com/Suhail/status/2104935527816524089) - Argues Jev is more than a simple classifier and can take a lot of packed state, but doesn't beat frontier LLMs on correctness yet.
+- [N01ennn — the official playbook in 7 patterns](https://x.com/N01ennn/status/2104935031865024781) - Condenses TypeSafe's playbook on question design (not prompts) into seven patterns, such as one judgment per question and weighing narrow Nouls in code.
+- [Google Gemma — turn DiffusionGemma into a Jev-like model](https://x.com/googlegemma/status/2104990261181075498) - Gemma's account shows vLLM seeding a response template so DiffusionGemma returns yes/no, multiple-choice, and score probabilities in one denoising step.
 
 ## Contributing
 
