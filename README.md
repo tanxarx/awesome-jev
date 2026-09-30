@@ -71,6 +71,11 @@ Every link below was resolved from its original source tweet/thread and verified
 - [autotrust/JEV-27B](https://huggingface.co/autotrust/JEV-27B) - An Apache-2.0 LoRA-plus-decision-head student of Jev 1.13 on Qwen3.8-27B, answering typed noul/choice/score questions in one forward pass.
 - [tomerglick57/Jevstiller](https://github.com/tomerglick57/Jevstiller) - Distills a repeated Jev classification task into a local model on the fly, so the same call gets the same answers on your own hardware.
 - [mode-io/vllm-jev](https://github.com/mode-io/vllm-jev) - Native vLLM serving for Jev-style decision models on Linux and Apple Silicon, with multimodal demos.
+- [TokenRhythm/NeoHorse-Jev-4B](https://huggingface.co/TokenRhythm/NeoHorse-Jev-4B) - An Apache-2.0 4B open decision model that turns app states into structured decisions with probabilities, also published on ModelScope.
+- [caiovicentino1/Eikos-27B](https://huggingface.co/caiovicentino1/Eikos-27B) - An open 27B Jev-like decision model with a 4B sibling and quantized builds, evaluated against Jev and Laya on JevBench (official runs requested).
+- [avbiswas/bev-decider-0.4B](https://huggingface.co/avbiswas/bev-decider-0.4B) - A 0.4B Jev-compatible decision model that is invariant to option order by construction; 74.7% vs. Jev 1.13's 78.0% on 5,000 held-out questions.
+- [r-ms/mini-jev](https://github.com/r-ms/mini-jev) - Measures what a Jev-style interface looks like on a frozen Qwen3-4B by reading option-letter logits in one forward pass instead of generating JSON.
+- [rongxinzy/LightJev](https://github.com/rongxinzy/LightJev) - Trains small backbones (standard: Qwen3-0.6B) into finite-candidate decision models with CE/Brier training, evaluation, and a Hugging Face checkpoint.
 
 ## Coding Agents & Dev Tools
 
@@ -133,6 +138,8 @@ Every link below was resolved from its original source tweet/thread and verified
 - [egma-ai/jev-code-reviewer](https://github.com/egma-ai/jev-code-reviewer) - Reviews agent-generated PR behavior rather than just diffs, using Jev to prioritize what needs human attention.
 - [abhixhek/jevcal](https://github.com/abhixhek/jevcal) - Calibrates, thresholds, and drift-checks typed decision models like Jev against an LLM teacher.
 - [ThinkFlowLab/system1-agents](https://github.com/ThinkFlowLab/system1-agents) - Uses System 1 decision models (Jev, Laya, Cua-S1) as the fast-decision "brain" for browser-use, computer-use, game, and robotics agents.
+- [sumleo/prompt2jev](https://github.com/sumleo/prompt2jev) - An agent skill and CLI that turns natural language, an LLM prompt, or the code that runs one into typed Jev questions and a runnable script.
+- [ringzerosec/jev-runtime-security](https://github.com/ringzerosec/jev-runtime-security) - Kernel-level, syscall-time policy enforcement for AI coding agents that can call Jev as an optional check.
 
 ## SDKs, Frameworks & Platform Integrations
 
@@ -147,6 +154,9 @@ Every link below was resolved from its original source tweet/thread and verified
 - [pydantic/pydantic-ai](https://github.com/pydantic/pydantic-ai/blob/main/docs/models/typesafe.md) - Pydantic AI's built-in TypeSafe/Jev model provider, usable as a structured-output model or as an LLM-judge evaluator.
 - [lakehq/sail](https://github.com/lakehq/sail) - The Rust Spark-replacement query engine; v0.7.2 adds built-in async Jev SQL functions (`jev_noul`, `jev_choice`, `jev_score`) that return typed answers per row.
 - [ollama/ollama](https://github.com/ollama/ollama/releases/tag/v0.35.0) - Ollama v0.35 adds decision-model support through a Jev-style `/v1/systemone` endpoint, with Nimble and Tev1 available to pull locally.
+- [unslothai/unsloth](https://github.com/unslothai/unsloth/releases/tag/v0.1.900-beta) - Unsloth Desktop v0.1.900 can run and serve decision models such as Laya locally behind a Jev-compatible API.
+- [twentyhq/twenty](https://github.com/twentyhq/twenty) - Twenty CRM's workflow builder adds a step that classifies a record into user-defined categories with a probability each, powered by Jev.
+- [confident-ai/deepeval](https://github.com/confident-ai/deepeval/blob/main/deepeval/metrics/jev_eval/jev_eval.py) - DeepEval's JevEval metric, which scores outputs from Jev's decision probabilities (weighted mean with confidence), in Python and TypeScript.
 - [marcreichel/laya-php](https://github.com/marcreichel/laya-php) - A Laravel-ready PHP SDK for Laya (a Jev alternative), classifying text in 100+ languages self-hosted.
 
 ## Browser & Desktop Automation
@@ -175,6 +185,7 @@ Every link below was resolved from its original source tweet/thread and verified
 - [kylemclaren/jevpdf](https://github.com/kylemclaren/jevpdf) - Searches a PDF by meaning in the browser: pdf.js extracts each line locally and Jev answers one Noul per line, highlighting matches page by page ranked by probability.
 - [pinecone-io/using-typesafe-and-pinecone](https://github.com/pinecone-io/using-typesafe-and-pinecone) - Pinecone's reference integration reranking retrieved candidates against natural-language criteria with Jev instead of a long-context LLM call; ~5x faster and ~43x cheaper than Claude Opus 5 on the same 200-candidate rerank in their benchmark.
 - [lancedb/lancedb](https://github.com/lancedb/lancedb/blob/main/python/python/lancedb/rerankers/typesafe.py) - LanceDB's built-in TypeSafe reranker, benchmarked against 19 reranker configurations across 5 datasets (HotpotQA Hit@1 63.5% to 72.9% with Jev).
+- [assafelovic/gpt-researcher](https://github.com/assafelovic/gpt-researcher/blob/main/gpt_researcher/context/jev_filter.py) - GPT Researcher's Jev context filter, swapped in for embedding similarity; the maintainers report 73% vs. 46% relevant context and reports preferred 15-3 in blind comparisons.
 - [mgaitan/sqlite-jev](https://github.com/mgaitan/sqlite-jev) - A loadable SQLite extension and Python wrapper for asking Jev typed questions from SQL.
 - [hev/reranker](https://github.com/hev/reranker) - A 90-line calibrated reranker on Jev: one call, up to 30 documents, a probability per document.
 - [AkashPriyadarshii/jev-seo](https://github.com/AkashPriyadarshii/jev-seo) - A Rust CLI/MCP server auditing SEO and AI-crawler accessibility with Jev.
@@ -298,6 +309,10 @@ Not every valuable Jev post ships a repo. These threads carry the architectural 
 - [Suhail — a new model type, not a classifier](https://x.com/Suhail/status/2104935527816524089) - Argues Jev is more than a simple classifier and can take a lot of packed state, but doesn't beat frontier LLMs on correctness yet.
 - [N01ennn — the official playbook in 7 patterns](https://x.com/N01ennn/status/2104935031865024781) - Condenses TypeSafe's playbook on question design (not prompts) into seven patterns, such as one judgment per question and weighing narrow Nouls in code.
 - [Google Gemma — turn DiffusionGemma into a Jev-like model](https://x.com/googlegemma/status/2104990261181075498) - Gemma's account shows vLLM seeding a response template so DiffusionGemma returns yes/no, multiple-choice, and score probabilities in one denoising step.
+- [yoavgo — 29 arXiv papers in two weeks](https://x.com/yoavgo/status/2104454553714450822) - Notes Jev had only limited early access from Sep 15 yet already had 29 arXiv papers, and calls that pace "not healthy".
+- [0xwhrrari — Almeida's 12-page blueprint](https://x.com/0xwhrrari/status/2104587006680379439) - Summarizes a 12-page PDF from Diogo Almeida: a 10-step blueprint for making any LLM faster, cheaper, and more controllable, starting with "separate generation from control".
+- [EntendreAI — Crypto Accounting Benchmark](https://x.com/EntendreAI/status/2104624722403283407) - Jev ran at about 635 ms per call but scored only 51.7%, 47.5%, and 48.3% choosing among 2, 3, and 5 accounts.
+- [jasonlk — $2.26 for a week of Jev](https://x.com/jasonlk/status/2104694741820481556) - Spent $2.26 across 54.9M tokens, about $0.04/M and roughly 50x cheaper than Sonnet, or $0.0002 per request.
 
 ## Contributing
 
