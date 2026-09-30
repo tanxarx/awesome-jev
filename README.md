@@ -203,6 +203,7 @@ Every link below was resolved from its original source tweet/thread and verified
 - [trycua/cua](https://github.com/trycua/cua/tree/main/libs/cua-s1) - See `libs/cua-s1`: home of `cua-s1-form-v0`, a 706K-parameter, MIT-licensed specialist model that fills web forms from UI state in ~50ms.
 - [TholeG/typesafe-chess](https://github.com/TholeG/typesafe-chess) - Two Jev instances play chess against each other: every move is a typed Choice over the legal moves plus a Score position evaluation, optionally driving an AlphaZero-style MCTS.
 - [lukaske/jev-doom-agent](https://github.com/lukaske/jev-doom-agent) - Runs two Chocolate Doom instances compiled to WebAssembly and has Jev pick a tactical macro from structured game state each tick, visibly falling back to an offline policy on a failed or low-confidence call.
+- [cwdx/1-million-emojis](https://github.com/cwdx/1-million-emojis) - A shared 1,000 × 1,000 emoji canvas, live at [chriswijnia.com/lab/emoji](https://chriswijnia.com/lab/emoji), where after each human stroke Jev answers a typed Choice over named emoji-and-place options and a Noul on whether the stroke is unfinished, then paints one emoji or finishes the shape.
 
 ## Finance & Trading
 
