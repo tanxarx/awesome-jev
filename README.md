@@ -91,6 +91,7 @@ Every link below was resolved from its original source tweet/thread and verified
 - [itsmostafa/typesafe-mcp](https://github.com/itsmostafa/typesafe-mcp) - An MCP connector giving any agent direct access to Jev.
 - [DevMortimer/pi-warden](https://github.com/DevMortimer/pi-warden) - Guardrails for the Pi agent: Jev judges irreversible/off-task tool calls, detects stuck loops, and flags unverified "done" claims.
 - [perixtar/jev-e2e](https://github.com/perixtar/jev-e2e) - Natural-language end-to-end web app tests, powered by Jev and Playwright.
+- [sedum-dev/sedum](https://github.com/sedum-dev/sedum) - Plain-English browser tests on Playwright where Jev picks the element for each step, or the next action in goal mode, and scores verify claims against a pass threshold.
 - [davila7/claude-code-templates](https://github.com/davila7/claude-code-templates/tree/main/cli-tool/components/mods/productivity) - See the `jev-model-router` and `jev-skill-suggestion` mods: per-turn model/effort routing and skill selection for Claude Code, installable with `npx claude-code-templates@latest --mod productivity/jev-model-router`.
 - [tlangridge/Alloy](https://github.com/tlangridge/Alloy) - A local, multi-model panel for Claude Code that uses Jev to route tasks by complexity, model strength, and remaining subscription quota.
 - [coldteadotai/abide](https://github.com/coldteadotai/abide) - Uses Jev to score every agent edit against project rules a linter can't express.
