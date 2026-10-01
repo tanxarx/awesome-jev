@@ -174,6 +174,7 @@ Every link below was resolved from its original source tweet/thread and verified
 - [lahfir/agent-desktop](https://github.com/lahfir/agent-desktop) - Rust-based desktop automation that reads an app's real UI through OS accessibility trees instead of screenshots, with an optional Jev skill for selecting controls and actions without loading the whole UI tree into context.
 - [shhivv/arc-cua](https://github.com/shhivv/arc-cua) - A desktop-automation action layer where Jev picks the next UI operation and target from a dynamically built action space limited to what the current screen actually exposes.
 - [michaelswissa/jevry](https://github.com/michaelswissa/jevry) - An MIT-licensed desktop browser agent for website tasks, cited research, and supported games.
+- [Acekorneya/POK-Agent](https://github.com/Acekorneya/POK-Agent) - A Windows computer-use agent where an LLM plans and Jev, as System 1, carries out the on-screen steps over UI Automation and OCR targets, replaying recorded action programs for repeated tasks; evaluated on Windows Agent Arena.
 
 ## Data & Retrieval
 
