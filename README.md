@@ -87,6 +87,7 @@ Every link below was resolved from its original source tweet/thread and verified
 - [autotrust/JEV-27B-VL](https://huggingface.co/autotrust/JEV-27B-VL) - The multimodal sibling of JEV-27B above: an Apache-2.0 open-weight decision model that takes image input.
 - [OmniJev/OneJev-0.8B](https://huggingface.co/OmniJev/OneJev-0.8B) - An Apache-2.0 multimodal System One decision model on Qwen3.5-0.8B; the [OneJev in the Browser](https://huggingface.co/spaces/shreyask/onejev-web) demo runs it on WebGPU without the image leaving the page.
 - [telepatia-ai/hertz-1](https://huggingface.co/telepatia-ai/hertz-1) - A Jev-style typed-decision model for Portuguese and Spanish audio, pairing a Parakeet-TDT encoder with a frozen Laya decision head so it decides without transcribing first.
+- [SamratDuttaOfficial/WaterSheep](https://github.com/SamratDuttaOfficial/WaterSheep) - An Apache-2.0 open-weight decision model fine-tuned from ModernBERT-base that answers noul, choice, score and multi-label questions with a probability per option, served locally over `/v1/systemone` or in the browser via ONNX.
 
 ## Coding Agents & Dev Tools
 
