@@ -31,6 +31,8 @@ Every link below was resolved from its original source tweet/thread and verified
 - [typesafe-ai/system-one-adapter-python](https://github.com/typesafe-ai/system-one-adapter-python) - TypeSafe's own official drop-in adapter: swap `TypeSafeClient` for OpenAI/Anthropic/compatible backends to compare Jev against chat models using the same code.
 - [typesafe.ai/blog/introducing-system-one-models-and-jev](https://typesafe.ai/blog/introducing-system-one-models-and-jev) - TypeSafe's own announcement post for System One models and Jev.
 - [docs.typesafe.ai](https://docs.typesafe.ai/introduction) - Official API docs for the System One / Jev endpoint.
+- [InfoQ — TypeSafe AI Releases Jev](https://www.infoq.com/news/2026/10/typesafe-ai-jev-released/) - News write-up of the release of Jev as a decision-only model that returns typed probabilities instead of text.
+- [The Information — Jev Fervor Leads to Talk of Big Valuation Boost](https://www.theinformation.com/newsletters/dealmaker/jev-fervor-leads-talk-big-valuation-boost) - Reports TypeSafe AI is in talks with investors to raise $1 billion or more at a valuation above $10 billion.
 
 ## Open-Source Reproductions & Clones
 
@@ -76,6 +78,15 @@ Every link below was resolved from its original source tweet/thread and verified
 - [avbiswas/bev-decider-0.4B](https://huggingface.co/avbiswas/bev-decider-0.4B) - A 0.4B Jev-compatible decision model that is invariant to option order by construction; 74.7% vs. Jev 1.13's 78.0% on 5,000 held-out questions.
 - [r-ms/mini-jev](https://github.com/r-ms/mini-jev) - Measures what a Jev-style interface looks like on a frozen Qwen3-4B by reading option-letter logits in one forward pass instead of generating JSON.
 - [rongxinzy/LightJev](https://github.com/rongxinzy/LightJev) - Trains small backbones (standard: Qwen3-0.6B) into finite-candidate decision models with CE/Brier training, evaluation, and a Hugging Face checkpoint.
+- [firelex/jeff](https://github.com/firelex/jeff) - A 0.8B open "System 1" decision model with swappable LoRA adapters on one base, using the same request format as Jev; unaffiliated, and distinct from logan-markewich/jeff above.
+- [feder-cr/jev](https://github.com/feder-cr/jev) - "jevos": an open-source alternative to Jev for yes/no decisions that runs on your laptop.
+- [Shanghua-Gao/RSI-Jev](https://github.com/Shanghua-Gao/RSI-Jev) - Typed-decision models (noul/choice/score) trained by a self-improving loop of AI agents, released with checkpoints, the code that produced them, and every failed version; includes a vision variant.
+- [perplexity-ai/pplx-decider-v1-27b](https://huggingface.co/perplexity-ai/pplx-decider-v1-27b) - Perplexity's Apache-2.0 decision model fine-tuned from Qwen3.8-27B and served through its Decisions API, which it reports scores higher than Jev on its own benchmarks.
+- [Cloudflare/clef](https://huggingface.co/Cloudflare/clef) - Cloudflare's Apache-2.0 Clef decision models, Jev-API compatible with a faster [clef-flash](https://huggingface.co/Cloudflare/clef-flash) variant, announced alongside an RL fine-tuning platform in [the launch post](https://blog.cloudflare.com/clef-decision-models/).
+- [strands-labs/strands-decider](https://github.com/strands-labs/strands-decider) - AWS's Apache-2.0 Strands Decider, a small local decision model (2B on Qwen3.5) that picks among options or rates on a scale with a calibrated confidence, released with its training recipe.
+- [autotrust/JEV-27B-VL](https://huggingface.co/autotrust/JEV-27B-VL) - The multimodal sibling of JEV-27B above: an Apache-2.0 open-weight decision model that takes image input.
+- [OmniJev/OneJev-0.8B](https://huggingface.co/OmniJev/OneJev-0.8B) - An Apache-2.0 multimodal System One decision model on Qwen3.5-0.8B; the [OneJev in the Browser](https://huggingface.co/spaces/shreyask/onejev-web) demo runs it on WebGPU without the image leaving the page.
+- [telepatia-ai/hertz-1](https://huggingface.co/telepatia-ai/hertz-1) - A Jev-style typed-decision model for Portuguese and Spanish audio, pairing a Parakeet-TDT encoder with a frozen Laya decision head so it decides without transcribing first.
 
 ## Coding Agents & Dev Tools
 
@@ -140,6 +151,9 @@ Every link below was resolved from its original source tweet/thread and verified
 - [ThinkFlowLab/system1-agents](https://github.com/ThinkFlowLab/system1-agents) - Uses System 1 decision models (Jev, Laya, Cua-S1) as the fast-decision "brain" for browser-use, computer-use, game, and robotics agents.
 - [sumleo/prompt2jev](https://github.com/sumleo/prompt2jev) - An agent skill and CLI that turns natural language, an LLM prompt, or the code that runs one into typed Jev questions and a runnable script.
 - [ringzerosec/jev-runtime-security](https://github.com/ringzerosec/jev-runtime-security) - Kernel-level, syscall-time policy enforcement for AI coding agents that can call Jev as an optional check.
+- [CommandCodeAI/cmd-mod-jev-nudge](https://github.com/CommandCodeAI/cmd-mod-jev-nudge) - A Command Code mod where Jev judges whether the agent stopped with work left and nudges it to keep going.
+- [everafterlabs/jes](https://github.com/everafterlabs/jes) - Open-source guardrails for AI agents that check prompts, retrieved content, tool calls, tool results, and responses for prompt injection, jailbreaks, and secret/PII leaks using decision models like Jev.
+- [gulbaki/jev-llm-guard](https://github.com/gulbaki/jev-llm-guard) - A contextual OWASP LLM Top 10 guardrail powered by Jev, with a Turkish interactive demo.
 
 ## SDKs, Frameworks & Platform Integrations
 
@@ -158,6 +172,13 @@ Every link below was resolved from its original source tweet/thread and verified
 - [twentyhq/twenty](https://github.com/twentyhq/twenty) - Twenty CRM's workflow builder adds a step that classifies a record into user-defined categories with a probability each, powered by Jev.
 - [confident-ai/deepeval](https://github.com/confident-ai/deepeval/blob/main/deepeval/metrics/jev_eval/jev_eval.py) - DeepEval's JevEval metric, which scores outputs from Jev's decision probabilities (weighted mean with confidence), in Python and TypeScript.
 - [marcreichel/laya-php](https://github.com/marcreichel/laya-php) - A Laravel-ready PHP SDK for Laya (a Jev alternative), classifying text in 100+ languages self-hosted.
+- [botassembly/thinkthen](https://github.com/botassembly/thinkthen) - A Rust SDK and CLI (MIT, 24 language bindings) where code asks a bounded question about text and gets a typed answer back, such as yes/no/not-sure exit codes for shell scripts, running on System One models like Jev.
+- [laravel/ai](https://github.com/laravel/ai) - The Laravel AI SDK ships a TypeSafe provider for classification with Jev as of v1.0.
+- [cequence-io/openai-scala-client](https://github.com/cequence-io/openai-scala-client/releases/tag/v1.4.0) - The Scala OpenAI client's v1.4.0 adds Liquid's d1 as a second decision model beside its existing Jev support.
+- [Liquid AI — Decision Models (d1)](https://docs.liquid.ai/lfm/models/decision-models) - Docs for Liquid's API-only d1 decision model, which serves Jev's noul/choice/score primitives at a `/decisions/v1/systemone` endpoint that the TypeSafe Python and TypeScript SDKs can call by changing the base URL.
+- [Databricks — Running open-Jev in SQL on Databricks](https://www.databricks.com/blog/running-open-jev-sql-databricks) - Walks through serving an open Jev-style decision model behind Databricks SQL so rows can be classified through `ai_query`.
+- [Arize AX — September 2026 release notes](https://arize.com/docs/ax/release-notes/history/2026/09-2026) - Adds Jev as a judge for high-volume structured evaluations.
+- [tnaftali/s1-tui](https://github.com/tnaftali/s1-tui) - A terminal UI for testing System One typed decisions (noul/choice/score) that lets you switch live between local Laya on MLX and hosted Jev on the same input.
 
 ## Browser & Desktop Automation
 
@@ -209,6 +230,7 @@ Every link below was resolved from its original source tweet/thread and verified
 - [achimala/jev-paint](https://github.com/achimala/jev-paint) - Turns Jev into a parallel pixel-color predictor: brush width tracks Jev's per-pixel confidence.
 - [tomita-anri/jev-ad-blocker](https://github.com/tomita-anri/jev-ad-blocker) - A Chrome extension that uses Jev to identify and remove only ads from a page.
 - [fazlerocks/jevmail](https://github.com/fazlerocks/jevmail) - Open-source, read-only Gmail triage that sorts an inbox into Needs Reply/Updates/Promos/Sales/Spam with Jev, ~1,000 emails/minute for 3 cents.
+- [TREMOR — Jev Rank](https://www.tigzig.com/post/tremor-news-jev-rank-oct2026) - Scores about 800 headlines from 64 feeds from 0 to 100 against your interests with Jev in under 2 seconds and sorts the news page by that score.
 
 ## Simulation, Games & Hardware
 
@@ -230,6 +252,7 @@ Every link below was resolved from its original source tweet/thread and verified
 - [jarrodwatts/jev-trader](https://github.com/jarrodwatts/jev-trader) - Makes one AI trade decision per Monad block on Kuru MON-USDC; defaults to mock/dry-run without a configured private key.
 - [svmanth/jmarket](https://github.com/svmanth/jmarket) - A Chrome extension giving Jev's own forecast on Polymarket-style questions instead of the crowd's.
 - [OpenByteInc/QuantDinger](https://github.com/OpenByteInc/QuantDinger) - A self-hosted, open-source AI trading OS (strategy research, backtesting, paper/live execution) that gates trade entry behind a Jev System One decision filter.
+- [aowang-ai/jev-trade](https://github.com/aowang-ai/jev-trade) - A live Jev-driven trader on Hyperliquid, a separate build from jarrodwatts/jev-trader above.
 
 ## Benchmarks & Evaluation
 
@@ -245,6 +268,8 @@ Every link below was resolved from its original source tweet/thread and verified
 - [crzyc0d3r/jev-agent-judge](https://github.com/crzyc0d3r/jev-agent-judge) - Evaluates recorded support-agent traces with typed Jev judgments (grounded, honest, relevant, helpful) and logs each as an Opik experiment, routing mid-confidence scores to human review.
 - [sumleo/RLCDAlignBench](https://github.com/sumleo/RLCDAlignBench) - "Just Ask Jev": 44 alignment-failure-detection benchmarks for RLCD-style zero-shot detectors like Jev, matching GPT-4o-mini on StrongREJECT at a fraction of the cost.
 - [jesyspa/jev-lean](https://github.com/jesyspa/jev-lean) - A Lean proof-automation harness that uses Jev to select lemmas and tactics.
+- [multimodalart/jev-decision-index](https://huggingface.co/spaces/multimodalart/jev-decision-index) - The Jev Decision Index: a Hugging Face Space benchmarking and tracking dozens of open reproductions of Jev on one shared suite.
+- [kachar/jev-tool-search](https://github.com/kachar/jev-tool-search) - Benchmarks BM25, embeddings, rerankers, and Jev for agent tool search on 525 real MCP tools, plus an experimental Jev search engine.
 
 ## Articles, Threads & Playbooks
 
@@ -313,6 +338,15 @@ Not every valuable Jev post ships a repo. These threads carry the architectural 
 - [0xwhrrari — Almeida's 12-page blueprint](https://x.com/0xwhrrari/status/2104587006680379439) - Summarizes a 12-page PDF from Diogo Almeida: a 10-step blueprint for making any LLM faster, cheaper, and more controllable, starting with "separate generation from control".
 - [EntendreAI — Crypto Accounting Benchmark](https://x.com/EntendreAI/status/2104624722403283407) - Jev ran at about 635 ms per call but scored only 51.7%, 47.5%, and 48.3% choosing among 2, 3, and 5 accounts.
 - [jasonlk — $2.26 for a week of Jev](https://x.com/jasonlk/status/2104694741820481556) - Spent $2.26 across 54.9M tokens, about $0.04/M and roughly 50x cheaper than Sonnet, or $0.0002 per request.
+- [JokiRuizLite — 61% of writes landed in the "unsure" band](https://x.com/JokiRuizLite/status/2105660516232495397) - On real multi-agent states, most write requests fell in Jev's uncertain range and escalated to Sonnet, so the decision layer still cost about half of all-Sonnet ($0.29 vs. $0.59 per run).
+- [robinfa10 — calibrated, but mediocre knowledge](https://x.com/robinfa10/status/2105480231112871999) - On 1,000 four-choice trivia questions Jev's confidence tracked accuracy (70% sure meant about 70% right) and an "I'd rather not answer" option induced abstaining, though it was right only about 66% of the time.
+- [RenDaichi147380 — Jev vs. GPT-6 Luna on 113 cases](https://x.com/RenDaichi147380/status/2105615520284455260) - A Japanese write-up where Luna was more accurate overall (81-99% vs. Jev's 67%), but Jev reached 98% at confidence of 0.9 or more and gave 0 changed answers across 15 identical runs against Luna's 5.
+- [sh_reya — per-row API calls don't fit batch work](https://x.com/sh_reya/status/2105737403306762350) - Argues a per-row decision-model API is a poor fit for batch filtering, estimating Qwen3-4B on one H100 could filter 5,000 reviews in about 6.6 seconds.
+- [ryanflorence — $21 overnight on Jev tokens](https://x.com/ryanflorence/status/2105676555909570980) - Polling Jev every 500 ms per game bot burned $21 overnight; the fix is to call it only on role-relevant events.
+- [KhuyenTran16 — why Jev isn't PydanticAI](https://x.com/KhuyenTran16/status/2105659858494136506) - Pydantic validates output after a model responds, whereas Jev constrains the decision beforehand by scoring only the allowed answers.
+- [ElArk — what "calibrated" means for System One models](https://elarkk.github.io/blog/jev-probabilities-calibration) - A blog post on when Jev's probabilities can be trusted, explored through calibration and ensembles.
+- [Robert Schwentker — Jevathon hacks that deserve encores](https://www.linkedin.com/pulse/jevathon-hacks-deserve-encores-robert-schwentker-nhhvc/) - A roundup of TypeSafe's Jevathon projects, noting several teams independently built a pre-execution checkpoint for agent actions.
+- [Fastino — Introducing GLiDE](https://fastino.ai/blog/introducing-glide-the-first-thinking-decision-model) - Announces a decision model that turns reasoning on only when its top answer is uncertain, reporting 64.81 on Decision Index 0.2.1, 6.9 points above Jev, in the vendor's own evaluation.
 
 ## Contributing
 
