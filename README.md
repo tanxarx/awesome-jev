@@ -87,6 +87,14 @@ Every link below was resolved from its original source tweet/thread and verified
 - [autotrust/JEV-27B-VL](https://huggingface.co/autotrust/JEV-27B-VL) - The multimodal sibling of JEV-27B above: an Apache-2.0 open-weight decision model that takes image input.
 - [OmniJev/OneJev-0.8B](https://huggingface.co/OmniJev/OneJev-0.8B) - An Apache-2.0 multimodal System One decision model on Qwen3.5-0.8B; the [OneJev in the Browser](https://huggingface.co/spaces/shreyask/onejev-web) demo runs it on WebGPU without the image leaving the page.
 - [telepatia-ai/hertz-1](https://huggingface.co/telepatia-ai/hertz-1) - A Jev-style typed-decision model for Portuguese and Spanish audio, pairing a Parakeet-TDT encoder with a frozen Laya decision head so it decides without transcribing first.
+- [Maincode/matilda-jev-v1](https://huggingface.co/Maincode/matilda-jev-v1) - Maincode's Apache-2.0 "Matilda Jev" on Qwen3.8-27B: a one-pass decision model that scores choice, yes/no, and ordered score questions over text, JSON state, or images, with a 255-option readout.
+- [aryanbains/Rook-V1](https://huggingface.co/aryanbains/Rook-V1) - An Apache-2.0 research preview adding a LoRA adapter and decision head to Decision 2.0 Lux 9B for self-hosted bounded choices; the owner reports 67.75% vs. Jev's 68.00% on four matched workflows, without raw runs.
+- [TheREZOR/TinyDecide](https://huggingface.co/TheREZOR/TinyDecide) - A 10.4M-parameter, 4-bit Apache-2.0 Jev-style decision model on ELECTRA-small that answers several typed questions in one encoder pass and runs on an ESP32-S3 microcontroller.
+- [gai-labs/reflex-1](https://huggingface.co/gai-labs/reflex-1) - Reflex-1: a 421M-parameter Apache-2.0 dual-encoder decision model that picks among per-request choices in one forward pass on a laptop CPU, reporting 96.09% on SciQ and 92.93% on Banking77 in the authors' own tests.
+- [TextCortex/clef-cybersecurity](https://huggingface.co/TextCortex/clef-cybersecurity) - An Apache-2.0 fine-tune of Cloudflare's clef-flash for prompt-injection and data-exfiltration detection that TextCortex reports beats Jev on prompt injection hidden in large PDFs.
+- [Rizzo-AI-Academy/rizzo-flow](https://github.com/Rizzo-AI-Academy/rizzo-flow) - An open, local take on Jev that returns typed decisions from an LLM without generating a single token.
+- [Yinsongxu/LLM2Jev](https://github.com/Yinsongxu/LLM2Jev) - Turns local language models into Jev-style structured decision models over text and images using prefill alone, with no token-by-token decoding.
+- [mohit67890/imajev](https://github.com/mohit67890/imajev) - An open Jev-style typed-decision model that also takes images: a photo, app state, and typed questions go in and calibrated probabilities come out, locally.
 
 ## Coding Agents & Dev Tools
 
@@ -154,6 +162,20 @@ Every link below was resolved from its original source tweet/thread and verified
 - [CommandCodeAI/cmd-mod-jev-nudge](https://github.com/CommandCodeAI/cmd-mod-jev-nudge) - A Command Code mod where Jev judges whether the agent stopped with work left and nudges it to keep going.
 - [everafterlabs/jes](https://github.com/everafterlabs/jes) - Open-source guardrails for AI agents that check prompts, retrieved content, tool calls, tool results, and responses for prompt injection, jailbreaks, and secret/PII leaks using decision models like Jev.
 - [gulbaki/jev-llm-guard](https://github.com/gulbaki/jev-llm-guard) - A contextual OWASP LLM Top 10 guardrail powered by Jev, with a Turkish interactive demo.
+- [WXK-AI/jev-opus](https://github.com/WXK-AI/jev-opus) - A CLI and Claude Code plugin that runs Claude Opus 5.5 with the effort level re-decided at every step by Jev while keeping the prompt cache intact.
+- [valentynkit/jev-belay](https://github.com/valentynkit/jev-belay) - A Claude Code Stop hook that blocks an unverified "done": it reads the transcript for evidence, asks Jev once, and fails open on everything else.
+- [shimo4228/jev-skill-router](https://github.com/shimo4228/jev-skill-router) - A reference Claude Code hook that asks Jev which installed skill fits each prompt and logs the answer without acting on it.
+- [abgregs/jev-skill-router](https://github.com/abgregs/jev-skill-router) - A separately built skill router for coding agents that asks Jev one Noul per skill, sharded in parallel, distinct from shimo4228/jev-skill-router above.
+- [suenot/codex-jev-router](https://github.com/suenot/codex-jev-router) - A portable setup that lets Jev pick the model for each Codex subagent for cost-aware routing, with English and Russian instructions.
+- [valentynkit/jev-commit](https://github.com/valentynkit/jev-commit) - A pre-commit hook where one Jev call judges whether the commit message matches the staged diff and flags debug leftovers and scope creep.
+- [luantak/is-malicious](https://github.com/luantak/is-malicious) - A Node CLI that sends a codebase's source, config, build, and CI files to Jev and points to suspicious lines before you run unfamiliar code.
+- [can1357/jegrep](https://github.com/can1357/jegrep) - A Rust semantic grep that scores files with Jev yes/no probabilities and returns file and line ranges with no embedding index or daemon, distinct from dzhng/jevgrep above.
+- [kierandotai/jev-scout](https://github.com/kierandotai/jev-scout) - An MCP server where Jev scores every search query, result, and fetched page an agent touches for relevance and credibility.
+- [allebee/pytest-jev](https://github.com/allebee/pytest-jev) - A pytest plugin for plain-English assertions on LLM output, passing only when Jev's calibrated probabilities clear a threshold.
+- [luobosibing2/dsh-jev-plugin](https://github.com/luobosibing2/dsh-jev-plugin) - A DeepSeek Harness plugin adding Jev as a System One decision layer for agent selection, supervision, corrections, and approvals.
+- [abhishek085/jevcontrol-hermes](https://github.com/abhishek085/jevcontrol-hermes) - A beta plugin for Hermes Agent where a small decision model handles secret-leak checks, memory filing, and safe-command approvals in about a tenth of a second.
+- [tsale/jevline](https://github.com/tsale/jevline) - A proof of concept that starts from one confirmed-malicious process and has Jev link related telemetry into an incident timeline and evidence table; the author reports 40 of 41 attack-chain processes found in 21 seconds for $0.11 on one lab intrusion.
+- [Ubayed-Bin-Sufian/GitReview-Radar](https://github.com/Ubayed-Bin-Sufian/GitReview-Radar) - "PR-Pulse": syncs open GitHub pull requests, evaluates each with Jev into an actionable state, and shows a prioritized review queue on an AWS-hosted dashboard.
 
 ## SDKs, Frameworks & Platform Integrations
 
@@ -179,6 +201,9 @@ Every link below was resolved from its original source tweet/thread and verified
 - [Databricks — Running open-Jev in SQL on Databricks](https://www.databricks.com/blog/running-open-jev-sql-databricks) - Walks through serving an open Jev-style decision model behind Databricks SQL so rows can be classified through `ai_query`.
 - [Arize AX — September 2026 release notes](https://arize.com/docs/ax/release-notes/history/2026/09-2026) - Adds Jev as a judge for high-volume structured evaluations.
 - [tnaftali/s1-tui](https://github.com/tnaftali/s1-tui) - A terminal UI for testing System One typed decisions (noul/choice/score) that lets you switch live between local Laya on MLX and hosted Jev on the same input.
+- [carldaws/hunch](https://github.com/carldaws/hunch) - Probabilistic control flow for Ruby and Rails, branching on a typed Jev answer such as `Hunch.likely?("fraudulent", given: order)`.
+- [dfinke/Jev](https://github.com/dfinke/Jev) - A PowerShell module for asking Jev typed yes/no, choice, and score questions and acting on the structured answers in scripts.
+- [hfgolino/llmClassificR](https://github.com/hfgolino/llmClassificR) - An R text-classification toolkit that adds Jev calls from pure R (single-label, multi-label, and ordinal rating) alongside calibration tools and bag-of-words baselines.
 
 ## Browser & Desktop Automation
 
@@ -219,6 +244,8 @@ Every link below was resolved from its original source tweet/thread and verified
 - [kyotofin/tax-doc-classifier](https://github.com/kyotofin/tax-doc-classifier) - A tax document page classifier built on Jev: one request per PDF page returns a probability over 261 IRS forms and 7 page kinds, with no model trained or hosted.
 - [AkashPriyadarshii/jev-curate](https://github.com/AkashPriyadarshii/jev-curate) - A Rust/Python streaming pipeline that filters and scores Parquet/JSONL dataset rows through Jev's Choice/Score/Noul primitives for synthetic-data and pretraining-corpus cleanup.
 - [giuliosmall/pg_typesafe](https://github.com/giuliosmall/pg_typesafe) - A pre-alpha C PostgreSQL extension calling Jev directly from SQL for categorical classification, a separately built alternative to realZachi/pg-jev above.
+- [chenmingtang830/jevgraph](https://github.com/chenmingtang830/jevgraph) - A schema-guided document-to-graph pipeline that replaces open-ended triple extraction with typed Jev relation decisions and evidence-backed candidate graphs.
+- [naogify/japanese-person-name-detector](https://github.com/naogify/japanese-person-name-detector) - A TypeScript module that judges whether a string looks like a Japanese personal name by combining regex rules, a name dictionary, and an optional Jev call.
 
 ## Content, Media & Moderation
 
@@ -231,6 +258,7 @@ Every link below was resolved from its original source tweet/thread and verified
 - [tomita-anri/jev-ad-blocker](https://github.com/tomita-anri/jev-ad-blocker) - A Chrome extension that uses Jev to identify and remove only ads from a page.
 - [fazlerocks/jevmail](https://github.com/fazlerocks/jevmail) - Open-source, read-only Gmail triage that sorts an inbox into Needs Reply/Updates/Promos/Sales/Spam with Jev, ~1,000 emails/minute for 3 cents.
 - [TREMOR — Jev Rank](https://www.tigzig.com/post/tremor-news-jev-rank-oct2026) - Scores about 800 headlines from 64 feeds from 0 to 100 against your interests with Jev in under 2 seconds and sorts the news page by that score.
+- [gnipbao/jev-highlight-cutter](https://github.com/gnipbao/jev-highlight-cutter) - A skill and Python CLI that scores interview and podcast transcript segments with Jev, picks non-overlapping highlights within a target length, and cuts them locally with FFmpeg.
 
 ## Simulation, Games & Hardware
 
@@ -270,6 +298,7 @@ Every link below was resolved from its original source tweet/thread and verified
 - [jesyspa/jev-lean](https://github.com/jesyspa/jev-lean) - A Lean proof-automation harness that uses Jev to select lemmas and tactics.
 - [multimodalart/jev-decision-index](https://huggingface.co/spaces/multimodalart/jev-decision-index) - The Jev Decision Index: a Hugging Face Space benchmarking and tracking dozens of open reproductions of Jev on one shared suite.
 - [kachar/jev-tool-search](https://github.com/kachar/jev-tool-search) - Benchmarks BM25, embeddings, rerankers, and Jev for agent tool search on 525 real MCP tools, plus an experimental Jev search engine.
+- [patchy631/jev-as-judge](https://github.com/patchy631/jev-as-judge) - A tutorial that scores ten synthetic refund-support traces with Jev's yes/no and ordinal answers in one request and logs them as a Comet Opik experiment, with an offline demo.
 
 ## Articles, Threads & Playbooks
 
@@ -347,6 +376,12 @@ Not every valuable Jev post ships a repo. These threads carry the architectural 
 - [ElArk — what "calibrated" means for System One models](https://elarkk.github.io/blog/jev-probabilities-calibration) - A blog post on when Jev's probabilities can be trusted, explored through calibration and ensembles.
 - [Robert Schwentker — Jevathon hacks that deserve encores](https://www.linkedin.com/pulse/jevathon-hacks-deserve-encores-robert-schwentker-nhhvc/) - A roundup of TypeSafe's Jevathon projects, noting several teams independently built a pre-execution checkpoint for agent actions.
 - [Fastino — Introducing GLiDE](https://fastino.ai/blog/introducing-glide-the-first-thinking-decision-model) - Announces a decision model that turns reasoning on only when its top answer is uncertain, reporting 64.81 on Decision Index 0.2.1, 6.9 points above Jev, in the vendor's own evaluation.
+- [Sentdex — decision models for robotics](https://x.com/Sentdex/status/2107513551539617948) - After testing decision models including vision-capable Clef, finds them not smart enough to replace specialised RL/ACT/VLA policies or larger multimodal LLMs, since a call to the decision model is still needed.
+- [imryven — the Jevons paradox for decisions](https://x.com/imryven/status/2107583659704225909) - One task cost about 3 cents on a frontier model vs. about 0.04 cents on Jev (76x cheaper), yet argues cheaper decisions may still raise total spend.
+- [HackerNoon — Using Jev to reduce our reasoner cost by 30%](https://hackernoon.com/using-jev-to-reduce-our-reasoner-cost-by-30percent) - Uses Jev for document routing and source recall in a production insurance-claims AI workflow to cut reasoner cost.
+- [Stephen Solka — Can Jev save my inbox?](https://huggingface.co/blog/stephen-solka/use-jev-to-delete-fundraising-emails) - A Hugging Face post testing Jev on deleting fundraising emails, with the 100-email evaluation results.
+- [radius5 — a Jev and Clef gate for image generation (Zenn, Japanese)](https://zenn.dev/radius5/articles/20261004-j3v7cl3f) - A two-stage Jev plus Clef gate in front of an image-generation service to avoid paid-but-refused requests, covering thresholds, caching, and failure handling.
+- [Data/AI Engineer — Build a Jev judge in MLflow](https://dataaiengineer.substack.com/p/build-a-jev-judge-in-mlflow-then) - Builds a Jev scorer with MLflow, tests the Python wiring, and measures false acceptances before replacing an existing evaluator.
 
 ## Contributing
 
