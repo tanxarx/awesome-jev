@@ -399,6 +399,7 @@ Not every valuable Jev post ships a repo. These threads carry the architectural 
 - [0xL1C10G — Jev versus Decisions at Puyo Puyo](https://x.com/0xL1C10G/status/2107610578168795601) - Reports faster Jev responses but larger chains and higher scores from OpenAI Decisions when both play Puyo Puyo with the same piece order and no falling-time limit.
 - [RunFiredrill — successful tool calls can still produce wrong answers](https://x.com/RunFiredrill/status/2107484360475595012) - Reports using Jev to check answers against synthetic tool records across 1,575 scenarios and 3,684 tool calls, finding two confirmed wrong answers after successful lookups.
 - [makeitjain_ — Jev gates in Mezzi](https://x.com/makeitjain_/status/2107478492531347731) - Reports moving question-understanding and information-sufficiency checks to Jev, saving roughly 1.5–2 seconds per chat and reducing those checks' cost by 90% in Mezzi's workflow.
+- [Made with Jev — What is Jev Engineering?](https://madewithjev.com/what-is-jev-engineering) - Defines the split where an LLM writes, Jev decides and code acts, lists seven rules the working builds share, and shows how to move a first decision out of an LLM call.
 
 ## Contributing
 
