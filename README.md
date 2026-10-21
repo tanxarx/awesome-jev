@@ -119,6 +119,7 @@ Every link below was resolved from its original source tweet/thread and verified
 - [singularity-layer/Singularity-xMESH-0.8B](https://huggingface.co/singularity-layer/Singularity-xMESH-0.8B) - A 0.8B decision model for choosing x402 payment endpoints and multi-step flows, reporting 80.0% complete-flow exact match against Jev's 11.25% on the authors' frozen 80-case suite.
 - [reaxlabs/reax-engine](https://github.com/reaxlabs/reax-engine) - An open-source inference engine for decision models such as Perplexity Decider and d3 behind a `/v1/systemone` API, measuring 2.62x the reference server's throughput for Decider v1.1 27B on the public JevBench set and 5.8-6.0x in an experimental shared-state mode.
 - [erfaneshrati/ownyourjev](https://github.com/erfaneshrati/ownyourjev) - "You don't need Jev": a 150M encoder trained on cheap LLM labels plus 220 hand labels that serves Jev's API on a CPU, reporting 8 wins, 4 ties, and no losses against hosted Jev on 12 tasks at 12-84x lower cost; see the [write-up](https://medium.com/data-science-collective/you-dont-need-jev-55be1efcf773).
+- [SamratDuttaOfficial/WaterSheep](https://github.com/SamratDuttaOfficial/WaterSheep) - An Apache-2.0 open-weight decision model fine-tuned from ModernBERT-base that answers noul, choice, score and multi-label questions with a probability per option, served locally over `/v1/systemone` or in the browser via ONNX.
 
 ## Coding Agents & Dev Tools
 
